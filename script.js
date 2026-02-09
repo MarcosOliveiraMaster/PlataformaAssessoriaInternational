@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const marketProducts = [
     {
         id: 101,
-        title: "Curso Mestre do Comércio Exterior",
+        title: "Espanhol para Negócios",
         description: "Aprenda a importar e exportar do zero com métodos validados.",
         niche: "Negócios",
         temp: 150, // Temperatura máxima
@@ -265,7 +265,7 @@ const marketProducts = [
     },
     {
         id: 102,
-        title: "Inglês para Negócios Internacionais",
+        title: "Compra e Aluguel de Imóveis no Paraguai",
         description: "Domine o vocabulário corporativo e feche contratos em dólar.",
         niche: "Idiomas",
         temp: 120,
@@ -276,7 +276,7 @@ const marketProducts = [
     },
     {
         id: 103,
-        title: "Mentoria: Vistos e Cidadania",
+        title: "Espanhol para Estudantes de Medicina - Nível 1",
         description: "Guia completo para quem quer morar fora legalmente.",
         niche: "Viagem",
         temp: 90,
@@ -287,7 +287,7 @@ const marketProducts = [
     },
     {
         id: 104,
-        title: "Investindo no Exterior",
+        title: "Espanhol para Estudantes de Medicina - Nível 2",
         description: "Proteja seu patrimônio investindo em moedas fortes.",
         niche: "Finanças",
         temp: 60,
@@ -298,7 +298,7 @@ const marketProducts = [
     },
     {
         id: 105,
-        title: "Consultoria de Supply Chain",
+        title: "Documentação para Vistos Brasileiros",
         description: "Otimize a cadeia de suprimentos da sua empresa.",
         niche: "Negócios",
         temp: 45,
@@ -306,6 +306,17 @@ const marketProducts = [
         price: 2500.00,
         commission: 800.00,
         image: "fa-truck-fast"
+    },
+    {
+        id: 106,
+        title: "Plano de Saúde no Paraguai",
+        description: "Conheça as melhores opções de cobertura de saúde no Paraguai.",
+        niche: "Saúde",
+        temp: 75,
+        rating: 4.7,
+        price: 1200.00,
+        commission: 350.00,
+        image: "fa-heart-pulse"
     }
 ];
 
