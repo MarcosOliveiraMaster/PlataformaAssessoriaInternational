@@ -22,6 +22,34 @@ const pageInfo = {
     }
 };
 
+// --- CONTROLE DO MENU MOBILE SANDUÍCHE ---
+
+// Função para alternar menu mobile
+function toggleMobileMenu() {
+    const sidebar = document.querySelector('.mobile-sidebar');
+    const overlay = document.getElementById('menu-overlay');
+    const hamburger = document.getElementById('hamburger');
+    
+    if (sidebar) {
+        sidebar.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('show');
+    }
+}
+
+// Função para fechar o menu mobile
+function closeMobileMenu() {
+    const sidebar = document.querySelector('.mobile-sidebar');
+    const overlay = document.getElementById('menu-overlay');
+    const hamburger = document.getElementById('hamburger');
+    
+    if (sidebar && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('show');
+    }
+}
+
 // Função Principal de Navegação
 function navigateTo(screenId) {
     // 1. Esconder todas as seções (Views)
@@ -68,6 +96,9 @@ function navigateTo(screenId) {
     if (activeMobileNav) {
         activeMobileNav.classList.add('active');
     }
+
+    // 6. Fechar o menu mobile ao navegar (mobile sidebar)
+    closeMobileMenu();
 }
 
 // Inicialização: Se quiser carregar dados dinâmicos do Dashboard no futuro, faremos aqui.
