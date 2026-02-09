@@ -353,9 +353,14 @@ function renderMarket() {
                         <p class="text-xs text-gray-400 mt-1">Preço máx: ${prod.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                     </div>
 
-                    <button onclick="requestAffiliation(${prod.id}, '${prod.title}')" class="w-full bg-brand-600 text-white font-bold py-3 rounded-xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20">
-                        Afiliar-se Agora
-                    </button>
+                    <div class="flex flex-col gap-2">
+                        <button onclick="requestAffiliation(${prod.id}, '${prod.title}', 'curso')" class="w-full bg-gray-100 text-gray-700 font-bold py-3 rounded-xl hover:bg-gray-200 transition-colors border border-gray-300">
+                            Contratar Curso
+                        </button>
+                        <button onclick="requestAffiliation(${prod.id}, '${prod.title}', 'assessoria')" class="w-full bg-brand-600 text-white font-bold py-3 rounded-xl hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20">
+                            Contratar Assessoria
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -363,8 +368,9 @@ function renderMarket() {
 }
 
 // Simulação de Ação
-function requestAffiliation(id, title) {
-    alert(`Parabéns! Você solicitou afiliação ao produto:\n"${title}"\n\nSeus links de divulgação foram gerados.`);
+function requestAffiliation(id, title, type) {
+    const typeLabel = type === 'curso' ? 'Contratar Curso' : 'Contratar Assessoria';
+    alert(`Parabéns! Você solicitou:\n"${typeLabel}"\n\nProduto: "${title}"\n\nSeus links de divulgação foram gerados.`);
 }
 
 // --- ATUALIZAÇÃO DO INITIAL LOAD ---
@@ -380,7 +386,7 @@ const walletHistory = [
     {
         id: 1,
         date: "09 Fev 2024",
-        desc: "Venda: Curso Mestre do Comércio Exterior",
+        desc: "Venda: Compra e Aluguel de Imóveis no Paraguai",
         type: "sale", // sale, withdraw, refund
         value: 450.00,
         status: "completed"
@@ -388,7 +394,7 @@ const walletHistory = [
     {
         id: 2,
         date: "09 Fev 2024",
-        desc: "Venda: Inglês para Negócios",
+        desc: "Venda: Espanhol para Negócios",
         type: "sale",
         value: 130.00,
         status: "pending" // saldo futuro
@@ -396,7 +402,7 @@ const walletHistory = [
     {
         id: 3,
         date: "05 Fev 2024",
-        desc: "Saque para Banco Inter",
+        desc: "Espanhol para Estudantes de Medicina",
         type: "withdraw",
         value: 5000.00,
         status: "completed"
@@ -404,7 +410,7 @@ const walletHistory = [
     {
         id: 4,
         date: "01 Fev 2024",
-        desc: "Reembolso: Mentoria VIP",
+        desc: "Documentação para Vistos Brasileiros",
         type: "refund",
         value: 1500.00,
         status: "completed"
