@@ -1,0 +1,170 @@
+/* Animação de Entrada Suave (Fade In + Slide Up) */
+.fade-in {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilização do Menu Ativo */
+.nav-item.active {
+    background-color: #fef2f2; /* brand-50 */
+    color: #dc2626; /* brand-600 */
+}
+
+.nav-item.active i {
+    color: #dc2626;
+}
+
+/* Estilização Customizada do Gráfico (Chart Bars) */
+.chart-bar {
+    width: 100%;
+    background-color: #fee2e2; /* brand-100 */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.chart-bar:hover {
+    background-color: #ef4444; /* brand-500 */
+}
+
+/* Tooltip do Gráfico */
+.chart-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937; /* gray-800 */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Mostrar tooltip ao passar o mouse na barra (group-hover do Tailwind no HTML ajuda, mas reforçamos aqui) */
+.group:hover .chart-tooltip {
+    opacity: 1;
+}
+
+/* Custom Scrollbar para ficar mais elegante */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f9fafb; 
+}
+::-webkit-scrollbar-thumb {
+    background: #e5e7eb; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #d1d5db; 
+}
+
+/* --- Estilos do Mercado --- */
+
+/* Badge de Temperatura (Efeito Fogo) */
+.temp-badge {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Badge de Comissão */
+.commission-box {
+    background-color: #fef2f2; /* brand-50 */
+    border: 1px solid #fee2e2; /* brand-100 */
+    transition: all 0.2s ease;
+}
+
+/* Card do Produto (Hover Lift) */
+.market-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Animações do Modal --- */
+
+/* Backdrop inicial (transparente) */
+.modal-backdrop {
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+/* Quando o modal está ativo, o backdrop fica visível */
+.modal-enter-active .modal-backdrop {
+    opacity: 1;
+}
+
+/* Painel do modal (posição e opacidade iniciais) */
+.modal-panel {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+/* Quando o modal está ativo, o painel aparece e se move para cima */
+.modal-enter-active .modal-panel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+.market-card:hover .commission-box {
+    background-color: #fee2e2; /* Darker bg on hover */
+    border-color: #fca5a5;
+}
+
+/* --- Estilos da Carteira --- */
+
+/* Tipografia para números financeiros */
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Cores de Transação */
+.transaction-in {
+    color: #16a34a; /* green-600 */
+}
+.transaction-in::before {
+    content: "+ ";
+}
+
+.transaction-out {
+    color: #dc2626; /* brand-600 */
+}
+.transaction-out::before {
+    content: "- ";
+}
+
+/* Badge de Tipo de Transação */
+.type-badge {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.type-sale { background-color: #dcfce7; color: #166534; }
+.type-withdraw { background-color: #fef2f2; color: #991b1b; }
+.type-refund { background-color: #f3f4f6; color: #4b5563; }
